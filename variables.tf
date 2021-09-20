@@ -7,3 +7,8 @@ variable "default_region" {}
 variable "ssh_user" {}
 variable "ssh_publickey_path" {}
 variable "vpn_shared_secret" {}
+
+#variable "cloudsql_root_password" {}
+variable "sql_username" {}
+variable "sql_password" {}
+

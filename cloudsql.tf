@@ -5,7 +5,7 @@ resource "google_sql_database_instance" "stock-ticker-db-cluster" {
   project               = var.project_id
   region                = var.default_region
   database_version      = "MYSQL_5_7"
-  root_password         = var.acg_sql_password
+  root_password         = var.sql_password
   deletion_protection   = false
   settings {
     tier              = "db-f1-micro"
@@ -44,6 +44,6 @@ resource "google_sql_user" "stock-ticker-db-user" {
   instance        = google_sql_database_instance.stock-ticker-db-cluster.name
   type            = "BUILT_IN"
   deletion_policy = "ABANDON"
-  name            = var.acg_sql_username
-  password        = var.acg_sql_password
+  name            = var.sql_username
+  password        = var.sql_password
 }
