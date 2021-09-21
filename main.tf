@@ -1,4 +1,14 @@
 ###################################
+# TERRAFORM STATE
+###################################
+terraform {
+  backend "gcs" {
+    bucket = "kblix-tf-state"
+    prefix = "terraform/state"
+  }
+}
+
+###################################
 # VPC
 ###################################
 resource "google_compute_network" "kblix-cka-vpc" {
